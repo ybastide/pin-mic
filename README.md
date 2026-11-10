@@ -19,6 +19,14 @@ pin-mic Pebble
 Matching is case-insensitive. The built-in microphone is found by transport type, so its
 localized name does not matter.
 
+```
+pin-mic             # is a pin-mic watcher running? its pid, substrings, and matching devices
+pin-mic --list      # Bluetooth input devices, tagged [default input] and [blocked]
+pin-mic --help
+```
+
+With no arguments, `pin-mic` exits 1 when no watcher is running.
+
 ## Build and install
 
 Requires Xcode and [just](https://github.com/casey/just).
