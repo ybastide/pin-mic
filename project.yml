@@ -1,0 +1,20 @@
+name: pin-mic
+options:
+  bundleIdPrefix: com.zeb
+  deploymentTarget:
+    macOS: "14.0"
+targets:
+  pin-mic:
+    type: tool
+    platform: macOS
+    sources:
+      - Sources/pin-mic
+    settings:
+      base:
+        PRODUCT_NAME: pin-mic
+        SWIFT_VERSION: "6.0"
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_STYLE: Manual
+    scheme:
+      commandLineArguments:
+        Pebble: true
