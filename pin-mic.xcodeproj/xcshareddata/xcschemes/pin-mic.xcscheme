@@ -39,6 +39,17 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "28AA6F7B0C811F615E2107E8"
+               BuildableName = "PinMicCoreTests.xctest"
+               BlueprintName = "PinMicCoreTests"
+               ReferencedContainer = "container:pin-mic.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <CommandLineArguments>
          <CommandLineArgument

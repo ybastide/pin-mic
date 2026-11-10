@@ -33,6 +33,7 @@ Requires Xcode and [just](https://github.com/casey/just).
 
 ```
 just build      # Release build into build/DerivedData
+just test       # run the unit tests
 just install    # build, copy to ~/.local/bin/pin-mic, restart the LaunchAgent if loaded
 ```
 

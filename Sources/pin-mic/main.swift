@@ -1,6 +1,7 @@
 import CoreAudio
 import Darwin
 import Foundation
+import PinMicCore
 
 let usage = """
     usage: pin-mic                              show whether pin-mic is running, and what it blocks
@@ -72,10 +73,6 @@ func isBluetooth(_ id: AudioDeviceID) -> Bool {
     return type == kAudioDeviceTransportTypeBluetooth || type == kAudioDeviceTransportTypeBluetoothLE
 }
 
-func matches(_ deviceName: String, _ patterns: [String]) -> Bool {
-    patterns.contains(where: { deviceName.localizedCaseInsensitiveContains($0) })
-}
-
 func enforce(_ blocked: [String]) {
     guard let current = defaultInput() else { return }
     let currentName = name(current)
@@ -107,19 +104,8 @@ func processArguments(_ pid: pid_t) -> [String]? {
     var buffer = [UInt8](repeating: 0, count: Int(argmax))
     size = buffer.count
     mib = [CTL_KERN, KERN_PROCARGS2, pid]
-    guard sysctl(&mib, 3, &buffer, &size, nil, 0) == 0, size > MemoryLayout<Int32>.size else { return nil }
-    let argc = buffer.withUnsafeBytes { $0.load(as: Int32.self) }
-    var index = MemoryLayout<Int32>.size
-    while index < size && buffer[index] != 0 { index += 1 }
-    while index < size && buffer[index] == 0 { index += 1 }
-    var result: [String] = []
-    while result.count < argc && index < size {
-        let start = index
-        while index < size && buffer[index] != 0 { index += 1 }
-        result.append(String(decoding: buffer[start..<index], as: UTF8.self))
-        index += 1
-    }
-    return result
+    guard sysctl(&mib, 3, &buffer, &size, nil, 0) == 0 else { return nil }
+    return parseProcessArguments(Array(buffer.prefix(size)))
 }
 
 func watchers() -> [(pid: pid_t, blocked: [String])] {
@@ -132,11 +118,10 @@ func watchers() -> [(pid: pid_t, blocked: [String])] {
         guard pid != getpid(),
               let path = executablePath(pid),
               (path as NSString).lastPathComponent == "pin-mic",
-              let args = processArguments(pid)?.dropFirst(),
-              !args.isEmpty,
-              !args.contains(where: { $0.hasPrefix("-") })
+              let args = processArguments(pid),
+              case .watch(let blocked) = parse(Array(args.dropFirst()))
         else { return nil }
-        return (pid, Array(args))
+        return (pid, blocked)
     }
 }
 
@@ -198,15 +183,15 @@ func usageError() -> Never {
     exit(64)
 }
 
-switch arguments {
-case []:
+switch parse(arguments) {
+case .status:
     exit(showStatus())
-case ["-h"], ["--help"]:
+case .help:
     print(usage)
-case ["-l"], ["--list"]:
+case .list:
     listBluetooth()
-case _ where arguments.contains(where: { $0.hasPrefix("-") }):
+case .usageError:
     usageError()
-default:
-    watch(arguments)
+case .watch(let blocked):
+    watch(blocked)
 }

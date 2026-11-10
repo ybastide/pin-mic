@@ -3,18 +3,39 @@ options:
   bundleIdPrefix: com.zeb
   deploymentTarget:
     macOS: "14.0"
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGN_STYLE: Manual
 targets:
+  PinMicCore:
+    type: library.static
+    platform: macOS
+    sources:
+      - Sources/PinMicCore
   pin-mic:
     type: tool
     platform: macOS
     sources:
       - Sources/pin-mic
+    dependencies:
+      - target: PinMicCore
     settings:
       base:
         PRODUCT_NAME: pin-mic
-        SWIFT_VERSION: "6.0"
-        CODE_SIGN_IDENTITY: "-"
-        CODE_SIGN_STYLE: Manual
     scheme:
       commandLineArguments:
         Pebble: true
+      testTargets:
+        - PinMicCoreTests
+  PinMicCoreTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - Tests/PinMicCoreTests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: PinMicCore

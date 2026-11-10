@@ -7,13 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44379A94DDC9C946FB0AB1E0 /* libPinMicCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8A96A8BBDA27C5BA47B458 /* libPinMicCore.a */; };
+		56339CC798CC35D2B908D920 /* PinMicCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA68D008A4F788A1246C33C /* PinMicCore.swift */; };
+		BC0D8CD20F19A7617AD6053F /* libPinMicCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8A96A8BBDA27C5BA47B458 /* libPinMicCore.a */; };
+		BF1F81F549B6A2B1646608A2 /* PinMicCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC4AAED5CD87B7D059AEDDE /* PinMicCoreTests.swift */; };
 		CE5EC9A3986349E42E7AE06D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E79B469B31BE89C2C644F2 /* main.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0DB5E53AED21EE86CF3B7970 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5C0AF4FFC7BBF3FAF206AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72B7B38C226EC9E2A5BC02C3;
+			remoteInfo = PinMicCore;
+		};
+		2E25EFD3ECD7ABFE3FCFC7B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5C0AF4FFC7BBF3FAF206AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72B7B38C226EC9E2A5BC02C3;
+			remoteInfo = PinMicCore;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		32F0D58EBBA06B5894D58BC0 /* PinMicCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinMicCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40E79B469B31BE89C2C644F2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		6AC4AAED5CD87B7D059AEDDE /* PinMicCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMicCoreTests.swift; sourceTree = "<group>"; };
+		7B8A96A8BBDA27C5BA47B458 /* libPinMicCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPinMicCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEA68D008A4F788A1246C33C /* PinMicCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMicCore.swift; sourceTree = "<group>"; };
 		FF2DF017689538E7242B03B4 /* pin-mic */ = {isa = PBXFileReference; includeInIndex = 0; path = "pin-mic"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21215BD85407FAC3D6BD28BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC0D8CD20F19A7617AD6053F /* libPinMicCore.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6033EA131EBAC25FCEBAF31D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44379A94DDC9C946FB0AB1E0 /* libPinMicCore.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		3AE2003E021976FF30405304 /* pin-mic */ = {
@@ -25,10 +69,30 @@
 			path = "Sources/pin-mic";
 			sourceTree = "<group>";
 		};
+		3FCA8B59CEE1F7C2E46DDF71 /* PinMicCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				6AC4AAED5CD87B7D059AEDDE /* PinMicCoreTests.swift */,
+			);
+			name = PinMicCoreTests;
+			path = Tests/PinMicCoreTests;
+			sourceTree = "<group>";
+		};
+		5729C81015F29D6E37662F5B /* PinMicCore */ = {
+			isa = PBXGroup;
+			children = (
+				BEA68D008A4F788A1246C33C /* PinMicCore.swift */,
+			);
+			name = PinMicCore;
+			path = Sources/PinMicCore;
+			sourceTree = "<group>";
+		};
 		9B5BD71E5086A4AF26E47139 = {
 			isa = PBXGroup;
 			children = (
 				3AE2003E021976FF30405304 /* pin-mic */,
+				5729C81015F29D6E37662F5B /* PinMicCore */,
+				3FCA8B59CEE1F7C2E46DDF71 /* PinMicCoreTests */,
 				BAFEAF53CF61AF59F13DFEAC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -36,7 +100,9 @@
 		BAFEAF53CF61AF59F13DFEAC /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				7B8A96A8BBDA27C5BA47B458 /* libPinMicCore.a */,
 				FF2DF017689538E7242B03B4 /* pin-mic */,
+				32F0D58EBBA06B5894D58BC0 /* PinMicCoreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -44,15 +110,36 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		28AA6F7B0C811F615E2107E8 /* PinMicCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A3C43929031D914E15C4F2C /* Build configuration list for PBXNativeTarget "PinMicCoreTests" */;
+			buildPhases = (
+				C18B62F20F5256EEE881C837 /* Sources */,
+				21215BD85407FAC3D6BD28BF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C75422BA29FD65635097B05B /* PBXTargetDependency */,
+			);
+			name = PinMicCoreTests;
+			packageProductDependencies = (
+			);
+			productName = PinMicCoreTests;
+			productReference = 32F0D58EBBA06B5894D58BC0 /* PinMicCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		57868F8A97D0773E3450370F /* pin-mic */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCD59790315E2021C60E019C /* Build configuration list for PBXNativeTarget "pin-mic" */;
 			buildPhases = (
 				7254322D88EDEC478B60D712 /* Sources */,
+				6033EA131EBAC25FCEBAF31D /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				107C1E3B66D06C813E0BE842 /* PBXTargetDependency */,
 			);
 			name = "pin-mic";
 			packageProductDependencies = (
@@ -60,6 +147,24 @@
 			productName = "pin-mic";
 			productReference = FF2DF017689538E7242B03B4 /* pin-mic */;
 			productType = "com.apple.product-type.tool";
+		};
+		72B7B38C226EC9E2A5BC02C3 /* PinMicCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AF488CB248A5C6AAC236BF5 /* Build configuration list for PBXNativeTarget "PinMicCore" */;
+			buildPhases = (
+				AEB40DC2855F540A7005629C /* Sources */,
+				50891B69B9BA7751AE8F9E35 /* Copy Swift Objective-C Interface Header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PinMicCore;
+			packageProductDependencies = (
+			);
+			productName = PinMicCore;
+			productReference = 7B8A96A8BBDA27C5BA47B458 /* libPinMicCore.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -70,7 +175,13 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					28AA6F7B0C811F615E2107E8 = {
+						ProvisioningStyle = Manual;
+					};
 					57868F8A97D0773E3450370F = {
+						ProvisioningStyle = Manual;
+					};
+					72B7B38C226EC9E2A5BC02C3 = {
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -89,10 +200,31 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				72B7B38C226EC9E2A5BC02C3 /* PinMicCore */,
 				57868F8A97D0773E3450370F /* pin-mic */,
+				28AA6F7B0C811F615E2107E8 /* PinMicCoreTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		50891B69B9BA7751AE8F9E35 /* Copy Swift Objective-C Interface Header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(DERIVED_SOURCES_DIR)/$(SWIFT_OBJC_INTERFACE_HEADER_NAME)",
+			);
+			name = "Copy Swift Objective-C Interface Header";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/include/$(PRODUCT_MODULE_NAME)/$(SWIFT_OBJC_INTERFACE_HEADER_NAME)",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ditto \"${SCRIPT_INPUT_FILE_0}\" \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7254322D88EDEC478B60D712 /* Sources */ = {
@@ -103,23 +235,87 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AEB40DC2855F540A7005629C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56339CC798CC35D2B908D920 /* PinMicCore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C18B62F20F5256EEE881C837 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF1F81F549B6A2B1646608A2 /* PinMicCoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		107C1E3B66D06C813E0BE842 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72B7B38C226EC9E2A5BC02C3 /* PinMicCore */;
+			targetProxy = 0DB5E53AED21EE86CF3B7970 /* PBXContainerItemProxy */;
+		};
+		C75422BA29FD65635097B05B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72B7B38C226EC9E2A5BC02C3 /* PinMicCore */;
+			targetProxy = 2E25EFD3ECD7ABFE3FCFC7B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		4746734A87A4C4E3C90DFF88 /* Debug */ = {
+		3198A54D286AC143671DDA71 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeb.PinMicCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		458C5750CD89BFA6B4616682 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeb.PinMicCoreTests;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4746734A87A4C4E3C90DFF88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zeb.pin-mic";
 				PRODUCT_NAME = "pin-mic";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -156,6 +352,8 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -182,7 +380,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -219,6 +417,8 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -238,30 +438,83 @@
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
-		B4A666686CAAD62A2F81F75C /* Release */ = {
+		A7AB0A3A4256EDB53C70C35D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeb.PinMicCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B4A666686CAAD62A2F81F75C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zeb.pin-mic";
 				PRODUCT_NAME = "pin-mic";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		C5761096838EB31A21CD4220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeb.PinMicCoreTests;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1AF488CB248A5C6AAC236BF5 /* Build configuration list for PBXNativeTarget "PinMicCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7AB0A3A4256EDB53C70C35D /* Debug */,
+				3198A54D286AC143671DDA71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2A3C43929031D914E15C4F2C /* Build configuration list for PBXNativeTarget "PinMicCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				458C5750CD89BFA6B4616682 /* Debug */,
+				C5761096838EB31A21CD4220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		5A815789D6F681F22FD74580 /* Build configuration list for PBXProject "pin-mic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
